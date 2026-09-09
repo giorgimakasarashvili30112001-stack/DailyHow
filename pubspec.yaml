@@ -25,7 +25,7 @@ dependencies:
   shared_preferences: ^2.3.2
 
   # Share button on fact cards
-  share_plus: ^10.0.2
+  share_plus: ^13.3.0
 
   intl: ^0.19.0
 

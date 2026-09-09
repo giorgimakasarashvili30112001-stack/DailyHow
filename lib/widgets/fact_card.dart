@@ -71,7 +71,9 @@ class _FactCardState extends State<FactCard> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () => Share.share('${fact.title}\n\n${fact.hook}'),
+                  onPressed: () => SharePlus.instance.share(
+                    ShareParams(text: '${fact.title}\n\n${fact.hook}'),
+                  ),
                   icon: const Icon(Icons.share_outlined, color: AppColors.mutedForeground),
                 ),
               ],
