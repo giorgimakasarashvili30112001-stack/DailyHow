@@ -103,7 +103,7 @@ Get `app-release-aab` from workflow artifacts
 
 ### What Happens (Automatically)
 1. ✅ Checkout code
-2. ✅ Setup Flutter SDK (3.24.0)
+2. ✅ Setup Flutter SDK (3.47.2)
 3. ✅ Get dependencies (flutter pub get)
 4. ✅ Analyze code (flutter analyze)
 5. ✅ Build debug APK
@@ -117,7 +117,7 @@ Get `app-release-aab` from workflow artifacts
 
 ### Environment
 - **OS:** Ubuntu latest
-- **Flutter:** 3.24.0 stable
+- **Flutter:** 3.47.2 stable
 - **Dart:** Included with Flutter
 
 ---

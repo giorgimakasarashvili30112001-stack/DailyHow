@@ -1,30 +1,20 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:daily_how/main.dart';
+import 'package:daily_how/models/fact.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  test('parses a fact payload', () {
+    final fact = Fact.fromJson({
+      'id': 'fact-1',
+      'title': 'How rainbows form',
+      'slug': 'how-rainbows-form',
+      'category': 'Science',
+      'hook': 'Light does something beautiful.',
+      'intro': 'Sunlight enters a raindrop.',
+      'steps': ['Refraction', 'Reflection'],
+      'surprising_detail': 'Every rainbow is unique.',
+    });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(fact.title, 'How rainbows form');
+    expect(fact.steps, ['Refraction', 'Reflection']);
   });
 }

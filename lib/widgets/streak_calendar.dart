@@ -25,10 +25,12 @@ class _StreakCalendarState extends State<StreakCalendar> {
     setState(() => _loading = true);
     final monthKey = DateFormat('yyyy-MM').format(_month);
     final data = await Api.getStreakCalendar(monthKey);
-    if (mounted) setState(() {
-      _data = data;
-      _loading = false;
-    });
+    if (mounted) {
+      setState(() {
+        _data = data;
+        _loading = false;
+      });
+    }
   }
 
   void _changeMonth(int delta) {

@@ -86,7 +86,7 @@ https://github.com/giorgimakasarashvili30112001-stack/DailyHow/actions
 The workflow automatically performs these steps:
 
 1. ✅ Checkout code
-2. ✅ Setup Flutter 3.24.0
+2. ✅ Setup Flutter 3.47.2
 3. ✅ Get dependencies (`flutter pub get`)
 4. ✅ Analyze code (`flutter analyze`)
 5. ✅ Build debug APK
@@ -147,7 +147,7 @@ adb install -r app-debug.apk
 ### Change Flutter Version
 Edit `.github/workflows/build-flutter.yml`:
 ```yaml
-flutter-version: '3.24.0'  # Change this
+flutter-version: '3.47.2'  # Change this
 ```
 
 ### Add iOS Builds

@@ -14,7 +14,7 @@ class SupabaseConfig {
     'SUPABASE_URL',
     defaultValue: 'https://ktnayycclukcwfupsdiz.supabase.co',
   );
-  static const anonKey = String.fromEnvironment(
+  static const publishableKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
     defaultValue:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0bmF5eWNjbHVrY3dmdXBzZGl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0NzQwMzUsImV4cCI6MjEwMDA1MDAzNX0.cPYAA3l9iOa7zU_NUMji9npCeBS1IuIXlXDV-GOeIL0',
@@ -25,7 +25,7 @@ class SupabaseService {
   static Future<void> init() async {
     await Supabase.initialize(
       url: SupabaseConfig.url,
-      anonKey: SupabaseConfig.anonKey,
+      publishableKey: SupabaseConfig.publishableKey,
     );
   }
 
