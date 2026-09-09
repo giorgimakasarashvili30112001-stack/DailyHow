@@ -100,7 +100,10 @@ Deno.serve(async (req) => {
         .lt("pick_date", today)
         .order("pick_date", { ascending: false })
         .limit(90);
-      if (error) throw error;
+      if (error) {
+        console.error("Failed to load archive", { today, error });
+        throw new Error(`Failed to load archive: ${error.message}`);
+      }
       const entries = (data ?? []).map((f) => ({ pick_date: f.pick_date, fact: f }));
       return jsonResponse({ entries });
     }
@@ -121,6 +124,6 @@ Deno.serve(async (req) => {
     return errorResponse("Unknown action", 400);
   } catch (e) {
     console.error(e);
-    return errorResponse(e instanceof Error ? e.message : "Internal error", 500);
+    return errorResponse(e instanceof Error ? e.message : JSON.stringify(e), 500);
   }
 });
